@@ -2,7 +2,7 @@ import { z } from "zod";
 import { COOKIE_NAME } from "../shared/const.js";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
-import { protectedProcedure, publicProcedure, router } from "./_core/trpc";
+import { adminProcedure, protectedProcedure, publicProcedure, router } from "./_core/trpc";
 import * as db from "./db";
 import { runPodcastDiscovery } from "./podcast-ingestion";
 
@@ -88,12 +88,12 @@ export const appRouter = router({
   // ============================================================
   admin: router({
     /** List all cases with full data for admin panel */
-    listCases: publicProcedure.query(async () => {
+    listCases: adminProcedure.query(async () => {
       return db.getAllCases();
     }),
 
     /** Add a new case */
-    addCase: publicProcedure
+    addCase: adminProcedure
       .input(
         z.object({
           id: z.string(),
@@ -125,7 +125,7 @@ export const appRouter = router({
       }),
 
     /** Update an existing case */
-    updateCase: publicProcedure
+    updateCase: adminProcedure
       .input(
         z.object({
           id: z.string(),
@@ -160,7 +160,7 @@ export const appRouter = router({
       }),
 
     /** Trigger podcast discovery for a case */
-    runDiscovery: publicProcedure
+    runDiscovery: adminProcedure
       .input(z.object({ caseId: z.string(), caseTitle: z.string() }))
       .mutation(async ({ input }) => {
         const result = await runPodcastDiscovery(input.caseId, input.caseTitle);
@@ -176,7 +176,7 @@ export const appRouter = router({
      * Trigger podcast discovery for a single case.
      * Searches iTunes, parses RSS feeds, stores shows + episodes.
      */
-    discoverPodcasts: publicProcedure
+    discoverPodcasts: adminProcedure
       .input(z.object({ caseId: z.string(), caseTitle: z.string() }))
       .mutation(async ({ input }) => {
         const result = await runPodcastDiscovery(input.caseId, input.caseTitle);
@@ -187,7 +187,7 @@ export const appRouter = router({
      * Run discovery for all cases that have never been synced.
      * Processes up to 5 cases per call to avoid timeouts.
      */
-    discoverAll: publicProcedure
+    discoverAll: adminProcedure
       .input(z.object({ limit: z.number().min(1).max(15).default(5) }))
       .mutation(async ({ input }) => {
         const allCases = await db.getAllCases();
@@ -209,7 +209,7 @@ export const appRouter = router({
       }),
 
     /** Get recent ingestion log entries */
-    logs: publicProcedure
+    logs: adminProcedure
       .input(z.object({ limit: z.number().min(1).max(50).default(20) }))
       .query(async ({ input }) => {
         return db.getRecentIngestionLogs(input.limit);

@@ -1,7 +1,7 @@
-# TrueCrimePodList - Design Document
+# Cased - Design Document
 
 ## App Identity
-**Name:** TrueCrimePodList  
+**Name:** Cased  
 **Tagline:** "Smart true crime for women who've heard it all."  
 **Core Purpose:** A case-first true crime podcast discovery and filtering tool. Users find the right podcast for a specific case - not a player, a curator.  
 **Target Audience:** Women who listen to true crime podcasts and want curated, boundary-aware recommendations.

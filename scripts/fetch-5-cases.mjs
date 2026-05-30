@@ -148,7 +148,7 @@ for (const c of CASES) {
 }
 
 writeFileSync(
-  '/home/ubuntu/truecrimepodlist/scripts/five-cases-data.json',
+  '/home/ubuntu/cased/scripts/five-cases-data.json',
   JSON.stringify(output, null, 2)
 );
 console.log('\n✅ Saved to scripts/five-cases-data.json');
