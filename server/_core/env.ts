@@ -1,4 +1,6 @@
 export const ENV = {
+  taddyUserId: process.env.TADDY_USER_ID ?? "",
+  taddyApiKey: process.env.TADDY_API_KEY ?? "",
   appId: process.env.VITE_APP_ID ?? "",
   cookieSecret: process.env.JWT_SECRET ?? "",
   databaseUrl: process.env.DATABASE_URL ?? "",

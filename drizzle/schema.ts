@@ -244,6 +244,7 @@ export const podcastEpisodes = mysqlTable("podcast_episodes", {
   caseMatchConfidence: int("caseMatchConfidence"),
   /** Flagged for human review if confidence < 80 */
   needsReview: boolean("needsReview").notNull().default(false),
+  reviewedByHuman: boolean("reviewedByHuman").notNull().default(false),
 
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
@@ -285,3 +286,18 @@ export const ingestionLog = mysqlTable("ingestion_log", {
 
 export type IngestionLog = typeof ingestionLog.$inferSelect;
 export type InsertIngestionLog = typeof ingestionLog.$inferInsert;
+
+// ============================================================
+// Case Aliases
+// ============================================================
+
+export const caseAliases = mysqlTable("case_aliases", {
+  id: int("id").autoincrement().primaryKey(),
+  caseId: varchar("caseId", { length: 64 }).notNull(),
+  alias: varchar("alias", { length: 255 }).notNull(),
+  priority: int("priority").notNull().default(1),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type CaseAlias = typeof caseAliases.$inferSelect;
+export type InsertCaseAlias = typeof caseAliases.$inferInsert;

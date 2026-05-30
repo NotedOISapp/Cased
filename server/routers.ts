@@ -1,3 +1,4 @@
+import { coverageRouter } from "./coverageRouter";
 import { z } from "zod";
 import { COOKIE_NAME } from "../shared/const.js";
 import { getSessionCookieOptions } from "./_core/cookies";
@@ -21,6 +22,7 @@ export const appRouter = router({
   // ============================================================
   // Cases
   // ============================================================
+  coverage: coverageRouter,
   cases: router({
     /** Get all cases (for Explore screen) */
     list: publicProcedure.query(async () => {
