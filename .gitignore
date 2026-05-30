@@ -1,0 +1,60 @@
+﻿# Dependencies
+node_modules/
+
+# Expo
+.expo/
+.expo-shared/
+dist/
+web-build/
+
+# Native build output
+ios/build/
+android/build/
+android/app/build/
+
+# Metro / React Native
+.metro-cache/
+.rncache/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# TypeScript
+*.tsbuildinfo
+
+# Testing / coverage
+coverage/
+
+# Temporary files
+tmp/
+temp/
+_extract_tmp/
+
+# EAS / local credentials
+credentials.json
+*.p8
+*.p12
+*.mobileprovision
+*.keystore
+*.jks
+
+# Manus or generated local storage
+manus-storage/
