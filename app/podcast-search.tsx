@@ -1,5 +1,6 @@
-import { Redirect } from 'expo-router';
+﻿import { Redirect } from 'expo-router';
 
 export default function PodcastSearchStub() {
-  return <Redirect href="/(tabs)/search" />;
+  return <Redirect href="/search" />;
 }
+
