@@ -392,29 +392,9 @@ export default function SettingsScreen() {
           <Text style={styles.aboutFooter}>Curated by women, for women. Since 2024.</Text>
         </View>
 
-        {/* Curator Tools */}
-        <SectionHeader title="Curator Tools" />
-        <TouchableOpacity
-          style={styles.adminBtn}
-          onPress={() => {
-            if (Platform.OS !== 'web') Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-            router.push('/admin');
-          }}
-          activeOpacity={0.8}
-        >
-          <View style={styles.adminBtnInner}>
-            <Text style={styles.adminBtnIcon}>🗂</Text>
-            <View style={{ flex: 1 }}>
-              <Text style={styles.adminBtnTitle}>Case Admin Panel</Text>
-              <Text style={styles.adminBtnSub}>Add cases, edit details, trigger podcast discovery</Text>
-            </View>
-            <Text style={styles.adminBtnChevron}>›</Text>
-          </View>
-        </TouchableOpacity>
-
         {/* Version */}
         <View style={styles.versionRow}>
-          <Text style={styles.versionText}>TrueCrimePodList v2.0</Text>
+          <Text style={styles.versionText}>Cased v2.0</Text>
           <Text style={styles.versionSub}>All data is stored locally on your device.</Text>
         </View>
 

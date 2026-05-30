@@ -38,7 +38,7 @@ function sleep(ms) {
 
 async function main() {
   console.log("=".repeat(60));
-  console.log("TrueCrimePodList — Podcast Discovery Runner");
+  console.log("Cased — Podcast Discovery Runner");
   console.log("=".repeat(60));
 
   // 1. Fetch all cases

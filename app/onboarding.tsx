@@ -128,7 +128,7 @@ function WelcomeStep({ onNext }: { onNext: () => void }) {
           <Text style={styles.logoIcon}>🎙</Text>
         </View>
       </View>
-      <Text style={styles.welcomeTitle}>TrueCrimePodList</Text>
+      <Text style={styles.welcomeTitle}>Cased</Text>
       <Text style={styles.welcomeTagline}>Smart true crime for women{'\n'}who have heard it all.</Text>
       <Text style={styles.welcomeBody}>
         Find the right podcast for every case. Filtered by your boundaries, curated for your taste.

@@ -29,7 +29,7 @@ describe("Podcast Index API credentials", () => {
           "X-Auth-Key": apiKey,
           "X-Auth-Date": String(epoch),
           Authorization: hash,
-          "User-Agent": "TrueCrimePodList/1.0",
+          "User-Agent": "Cased/1.0",
         },
       }
     );

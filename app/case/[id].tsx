@@ -661,7 +661,7 @@ export default function CaseDetailScreen() {
     try {
       await Share.share({
         title: caseItem?.title ?? 'True Crime Case',
-        message: `${caseItem?.title ?? ''}\n\n${caseItem?.summary ?? ''}\n\nFound on TrueCrimePodList`,
+        message: `${caseItem?.title ?? ''}\n\n${caseItem?.summary ?? ''}\n\nFound on Cased`,
       });
     } catch {}
   };

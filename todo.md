@@ -1,4 +1,4 @@
-# TrueCrimePodList - TODO
+# Cased - TODO
 
 ## Setup & Configuration
 - [x] Update theme colors (warm charcoal, wine, emerald, taupe)

@@ -1,5 +1,5 @@
 // ============================================================
-// TrueCrimePodList - Core Data Types
+// Cased - Core Data Types
 // v2.0 — Full Case Card + Podcast Episode Card Protocol
 // ============================================================
 

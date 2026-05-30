@@ -87,5 +87,5 @@ for (const c of CASES) {
 }
 
 import { writeFileSync } from 'fs';
-writeFileSync('/home/ubuntu/truecrimepodlist/scripts/probe-results.json', JSON.stringify(results, null, 2));
+writeFileSync('/home/ubuntu/cased/scripts/probe-results.json', JSON.stringify(results, null, 2));
 console.log('\n✅ Results saved to scripts/probe-results.json');
